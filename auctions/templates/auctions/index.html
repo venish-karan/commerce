@@ -1,0 +1,28 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+    <table>
+        {% for auction in auctionLists %}
+            <tr>
+                <td>
+                    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                    <img src="{{auction.image}}"" alt="{{auction.image}}" style="width:200px;height:200px;">
+                </td>
+                <td>
+                    <div style="padding-left: 25%;">
+                    {{auction.title}}
+                    <br>
+                    Bid: ${{auction.bid}}
+                    <br>
+                    Description: {{auction.comment}}
+                    <br>
+                    {{auction.updated_at}}
+                    </div>
+                    
+                </td>
+                
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
